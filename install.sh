@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf $0
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 LANG=en_US.UTF-8
@@ -731,16 +732,17 @@ echo "
 | The WebPanel URL will be http://SERVER_IP:8888 when installed.
 +----------------------------------------------------------------------
 "
-while [ "$go" != 'y' ] && [ "$go" != 'n' ]
-do
-	read -p "Do you want to install Bt-Panel to the $setup_path directory now?(y/n): " go;
-done
+#while [ "$go" != 'y' ] && [ "$go" != 'n' ]
+#do
+#	read -p "Do you want to install Bt-Panel to the $setup_path directory now?(y/n): " go;
+#done
 
-if [ "$go" == 'n' ];then
-	exit;
-fi
+#if [ "$go" == 'n' ];then
+#	exit;
+#fi
+
 if [ "$1" == '' ];then
-	echo "请带上参数运行！";exit;
+	echo "请带上参数运行！ 例: bash install.sh 7.0.1";exit;
 fi
 
 Install_Main
